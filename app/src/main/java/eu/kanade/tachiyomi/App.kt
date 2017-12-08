@@ -31,7 +31,7 @@ open class App : Application() {
         Injekt = InjektScope(DefaultRegistrar())
         Injekt.importModule(AppModule(this))
 
-        if (BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
+        if (BuildConfig.DEBUG) Timber.plant(TachiyomiDebugTree())
 
         setupAcra()
         setupJobManager()
