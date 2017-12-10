@@ -9,11 +9,7 @@ import dalvik.system.PathClassLoader
 import eu.kanade.tachiyomi.R
 import eu.kanade.tachiyomi.source.online.HttpSource
 import eu.kanade.tachiyomi.source.online.YamlHttpSource
-import eu.kanade.tachiyomi.source.online.english.*
-import eu.kanade.tachiyomi.source.online.german.WieManga
-import eu.kanade.tachiyomi.source.online.russian.Mangachan
-import eu.kanade.tachiyomi.source.online.russian.Mintmanga
-import eu.kanade.tachiyomi.source.online.russian.Readmanga
+import eu.kanade.tachiyomi.source.online.english.Batoto
 import eu.kanade.tachiyomi.util.hasPermission
 import org.yaml.snakeyaml.Yaml
 import timber.log.Timber
@@ -49,16 +45,7 @@ open class SourceManager(private val context: Context) {
 
     private fun createInternalSources(): List<Source> = listOf(
             LocalSource(context),
-            Batoto(),
-            Mangahere(),
-            Mangafox(),
-            Kissmanga(),
-            Readmanga(),
-            Mintmanga(),
-            Mangachan(),
-            Readmangatoday(),
-            Mangasee(),
-            WieManga()
+            Batoto()
     )
 
     private fun createYamlSources(): List<Source> {
