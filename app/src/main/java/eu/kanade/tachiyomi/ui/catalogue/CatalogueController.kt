@@ -47,7 +47,7 @@ class CatalogueController : NucleusController<CataloguePresenter>(),
     /**
      * Adapter containing sources.
      */
-    private var adapter : CatalogueAdapter? = null
+    private var adapter: CatalogueAdapter? = null
 
     /**
      * Called when controller is initialized.
@@ -200,7 +200,7 @@ class CatalogueController : NucleusController<CataloguePresenter>(),
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            // Initialize option to open catalogue settings.
+        // Initialize option to open catalogue settings.
             R.id.action_settings -> {
                 router.pushController((RouterTransaction.with(SettingsSourcesController()))
                         .popChangeHandler(SettingsSourcesFadeChangeHandler())
