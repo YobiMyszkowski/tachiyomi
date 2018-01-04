@@ -1,19 +1,14 @@
 package eu.kanade.tachiyomi.source
 
 import android.content.Context
-import eu.kanade.tachiyomi.extension.ExtensionManager
 import eu.kanade.tachiyomi.source.online.HttpSource
-import uy.kohesive.injekt.Injekt
-import uy.kohesive.injekt.api.get
 
-open class SourceManager(private val context: Context,
-                         extensionManager: ExtensionManager = Injekt.get()) {
+open class SourceManager(private val context: Context) {
 
     private val sourcesMap = mutableMapOf<Long, Source>()
 
     init {
         createInternalSources().forEach { registerSource(it) }
-        extensionManager.init(this)
     }
 
     open fun get(sourceKey: Long): Source? {
